@@ -1,0 +1,422 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<!-- <groupId>net.risesoft</groupId> -->
+	<artifactId>risenet-y9boot-webapp-tokenizer</artifactId>
+	<version>9.3.9</version>
+	<packaging>war</packaging>
+
+	<parent>
+		<groupId>net.risesoft</groupId>
+		<artifactId>risenet-parent-y9boot</artifactId>
+		<version>9.3.9</version>
+		<relativePath>../risenet-parent-y9boot/pom.xml</relativePath>
+	</parent>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<tika.version>1.24.1</tika.version>
+		<maven.deploy.skip>true</maven.deploy.skip>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<name>local private nexus</name>
+			<url>https://svn.youshengyun.com:9900/nexus/repository/maven-public/</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>nexus</id>
+			<name>local private nexus</name>
+			<url>https://svn.youshengyun.com:9900/nexus/repository/maven-public/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<url>https://svn.youshengyun.com:9900/nexus/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<url>https://svn.youshengyun.com:9900/nexus/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<dependencies>
+	
+
+		<dependency>
+			<groupId>net.risesoft</groupId>
+			<artifactId>risenet-y9boot-starter-elasticsearch</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- <dependency>
+			<groupId>net.risesoft</groupId>
+			<artifactId>risenet-y9boot-remoting-rpc-client</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>net.risesoft</groupId>
+			<artifactId>risenet-y9boot-starter-rpcServer-motan</artifactId>
+			<version>${project.version}</version>
+		</dependency> -->
+
+		<!-- <dependency>
+			<groupId>net.risesoft</groupId>
+			<artifactId>risenet-y9boot-starter-sso</artifactId>
+			<version>${project.version}</version>
+		</dependency> -->
+		
+		<dependency>
+			<groupId>net.risesoft</groupId>
+			<artifactId>risenet-y9boot-starter-dbComment</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.risesoft</groupId>
+			<artifactId>risenet-y9boot-api-platform</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.risesoft</groupId>
+			<artifactId>risenet-y9boot-starter-jpa-public</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.risesoft</groupId>
+			<artifactId>risenet-y9boot-starter-jpa-tenant</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<!-- <dependency>
+			<groupId>net.risesoft</groupId>
+			<artifactId>risenet-y9boot-starter-mongo-public</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>net.risesoft</groupId>
+			<artifactId>risenet-y9boot-support-fileService-FTP</artifactId>
+			<version>${project.version}</version>
+		</dependency> -->
+		
+		<dependency>
+			<groupId>net.risesoft</groupId>
+			<artifactId>risenet-y9boot-common-util</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-devtools</artifactId>
+	        <optional>true</optional>
+	    </dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
+
+		<!-- ik分词器 -->
+		<!-- <dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch-analysis-ik</artifactId>
+			<version>7.6.2</version>
+		</dependency> -->
+		<!-- ik分词器 -->
+
+		<!-- kafka -->
+		<!-- <dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency> -->
+		<!-- kafka -->
+
+		<!-- tika -->
+		<dependency>
+			<groupId>org.apache.tika</groupId>
+			<artifactId>tika-core</artifactId>
+			<version>${tika.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tika</groupId>
+			<artifactId>tika-parsers</artifactId>
+			<version>${tika.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+		</dependency>
+		<!-- tika -->
+		
+		<dependency>
+		    <groupId>xml-apis</groupId>
+		    <artifactId>xml-apis</artifactId>
+		    <version>1.4.01</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>3.3.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>3.3.7</version>
+        </dependency>
+        <dependency>
+		    <groupId>com.sun.xml.bind</groupId>
+		    <artifactId>jaxb-xjc</artifactId>
+		    <version>2.3.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.unboundid</groupId>
+			<artifactId>unboundid-ldapsdk</artifactId>
+		</dependency>
+		
+		
+	</dependencies>
+	<build>
+		<finalName>tokenizer</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<!-- 动态编译环境配置 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.2</version>
+				<executions>
+					<execution>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<resources>
+								<resource>
+									<directory>src/main/resources/profiles/${dir}</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+							<outputDirectory>${project.build.outputDirectory}</outputDirectory>
+							<overwrite>true</overwrite>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- 动态编译环境配置 -->
+			
+			<plugin>
+	            <groupId>com.google.cloud.tools</groupId>
+	            <artifactId>jib-maven-plugin</artifactId>
+	            <version>3.4.0</version>
+	            <configuration>
+	                <skip>false</skip>
+	                <allowInsecureRegistries>true</allowInsecureRegistries>
+	                <from>
+	                    <!--<image>eclipse-temurin:11-jre</image>-->
+	                    <image>svn.youshengyun.com:9924/tomcat:9.0-jre11-temurin</image>
+	                    <!-- <image>svn.youshengyun.com:9924/eclipse-temurin:11.0.16.1_1-jre</image> -->
+	                    <auth>
+							<username>publisher</username>
+							<password>83204585</password>
+						</auth>
+	                    <platforms>
+	                        <platform>
+	                            <architecture>amd64</architecture>
+	                            <os>linux</os>
+	                        </platform>
+	                    </platforms>
+	                </from>
+	                <container>
+	                    <appRoot>/usr/local/tomcat/webapps/${project.build.finalName}</appRoot>
+	                </container>
+	                <to>
+                        <image>svn.youshengyun.com:9923/${project.artifactId}</image>
+                        <tags>
+                            <tag>${project.version}</tag>
+                        </tags>
+                        <auth>
+                            <username>publisher</username>
+                            <password>83204585</password>
+                        </auth>
+                    </to>
+	            </configuration>
+	            <executions>
+	                <execution>
+	                    <phase>package</phase>
+	                    <goals>
+	                        <goal>build</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+	        </plugin>
+
+		</plugins>
+
+		<!-- 动态编译环境配置 -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>profiles/*</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources/profiles/${dir}</directory>
+			</resource>
+		</resources>
+	</build>
+
+	<profiles>
+		<profile>
+			<!-- 本机个人开发环境 -->
+			<id>local</id>
+			<properties>
+				<dir>local</dir>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<!-- 本地团队开发环境 -->
+			<id>dev</id>
+			<properties>
+				<dir>dev</dir>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<profile>
+			<!-- 测试环境 -->
+			<id>test</id>
+			<properties>
+				<dir>test</dir>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<!-- 生产环境 -->
+			<id>prod</id>
+			<properties>
+				<dir>prod</dir>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+	</profiles>
+
+</project>

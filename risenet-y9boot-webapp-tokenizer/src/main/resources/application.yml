@@ -1,0 +1,165 @@
+hibernate:
+    dialect:
+        mssql: org.hibernate.dialect.SQLServer2012Dialect
+        mysql: org.hibernate.dialect.MySQL8Dialect
+        oracle: org.hibernate.dialect.Oracle10gDialect
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+server:
+    intranet:
+        ip: 192.168.1.x,10.161.x.x
+    port: 7055
+    servlet:
+        encoding:
+            charset: UTF-8
+            enabled: true
+            force: true
+        session:
+              tracking-modes: COOKIE
+    tomcat:
+        uri-encoding: UTF-8
+spring:
+    aop:
+        auto: false
+        proxy-target-class: false
+    autoconfigure:
+        exclude: 
+            - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+            - org.springframework.boot.autoconfigure.quartz.QuartzAutoConfiguration
+            - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+            - org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration
+            - org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+    data:
+        elasticsearch:
+            repositories:
+                enabled: true
+    datasource:
+        generate-unique-name: false
+        druid:
+            y9-public:
+                driver-class-name: org.h2.Driver 
+                url: jdbc:h2:mem:RISEDB
+                username: sa 
+                password: 
+                initialSize: 1
+                maxActive: 20
+                maxPoolPreparedStatementPerConnectionSize: 100
+                maxWait: 60000
+                minEvictableIdleTimeMillis: 300000
+                minIdle: 1
+                poolPreparedStatements: true
+                testOnBorrow: false
+                testOnReturn: false
+                testWhileIdle: true
+                timeBetweenEvictionRunsMillis: 60000
+                useGlobalDataSourceStat: true
+                validationQuery: SELECT 1 FROM DUAL
+    elasticsearch:
+        rest:
+            uris: 127.0.0.1:9200
+            #uris: 192.169.144.213:9200
+            #username: elastic
+            #password: 'risesoft@swj'
+    jmx:
+        default-domain: datacenter
+    jpa:
+        hibernate:
+            naming:
+                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        open-in-view: false
+        properties:
+            hibernate:
+                cache:
+                    use_query_cache: false
+                    use_second_level_cache: false
+                dialect: org.hibernate.dialect.H2Dialect
+                hbm2ddl:
+                    auto: update
+                jdbc:
+                    batch_size: 100
+                show_sql: true
+    main:
+        allow-bean-definition-overriding: true
+    h2:
+        console:
+            enabled: true
+            path: /h2-data
+            settings:
+                web-allow-others: true
+    mvc:
+        view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
+    servlet:
+        multipart:
+            maxFileSize: 200MB
+            maxRequestSize: 1000MB
+systemName: datacenter
+y9:
+    app:
+        log:
+            kafkaEnabled: false
+        platform:
+            checkPermission: false
+            enableIpAddressWhiteList: false
+            eventTarget: ALL,sync-all-persons,sync-all-departments
+            strictRoleBasedAcessControll: false
+    common:
+        idEnabled: 0
+        cxfEnabled: false
+        cacheEnabled: false
+        kafkaEnabled: false
+        guidLength: 32
+        tomcatPassWord: tomcat
+        tomcatUserName: tomcat
+        dicPath: /data/tokenizer/ik/hot_ext.dic  #本地环境使用
+    feature:
+        elasticsearch:
+            packagesToScanEntityPublic: net.risesoft.nosql.elastic.entity
+            packagesToScanRepositoryPublic: net.risesoft.nosql.elastic.repository
+        jpa:
+            packagesToScanEntityPublic: net.risesoft.y9public.entity
+            packagesToScanEntityTenant: net.risesoft.entity
+            packagesToScanRepositoryPublic: net.risesoft.y9public.repository
+            packagesToScanRepositoryTenant: net.risesoft.repository
+        mongo:
+             packagesToScanEntityPublic: net.risesoft.y9public.entity
+             packagesToScanRepositoryPublic: net.risesoft.y9public.repository
+             packagesToScanEntityTenant: net.risesoft.entity
+             packagesToScanRepositoryTenant: net.risesoft.repository
+        listener:
+            redis:
+                enabled: false
+        log:
+            enabled: false
+        publish:
+            kafka:
+                enabled: false
+            redis:
+                enabled: false
+        session:
+            mongo:
+                collection-name: y9sessions
+                enabled: false
+                maxInactiveIntervalInSeconds: 3600
+            redis:
+                enabled: true
+                maxInactiveIntervalInSeconds: 3600
+        sso:
+            casFilterUrlPatterns: /*
+            casServerUrlPrefix: http://localhost:7055/sso
+            casServerUrlPrefixForValidation: http://127.0.0.1:7055/sso
+            enabled: false
+            ignorePattern: /static,/services,/mobile,/engine,/ssoProxyCallback,/scheduled,/actuator
+            ignoreUrlPatternType: net.risesoft.matcher.RiseContainMatcher
+            logoutUrl: http://localhost:7055/sso/logout?service=http://localhost:7056
+            saveLogMessage: false
+            saveOnlineMessage: false
+            serverName: http://localhost:7056
+            singleSignOutFilterOrder: 1
+        file:
+            sha256FileContent: true

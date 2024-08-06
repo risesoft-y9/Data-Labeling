@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: datacenter
+  cloud:
+    config:
+      enabled: false
+      fail-fast: true
+      label: datacenter
+      password: 83204585
+      profile: local
+      uri: http://localhost:8888/configserver
+      username: y9admin
+      watch:
+        enabled: false
+  jmx:
+    default-domain: datacenter
+  profiles:
+    active: local
