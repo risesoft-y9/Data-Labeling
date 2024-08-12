@@ -161,7 +161,7 @@ webapp -- 系统模块
 微信号：qq349416828
 
 备注：开源数据标注咨询-姓名
-<div><img style="width: 40%" src="https://vue.youshengyun.com/files/img/曲经理-微信二维码.png"><div/>
+<div><img style="width: 40%" src="https://vue.youshengyun.com/files/img/开源网站图片上传/曲经理-微信二维码.png"><div/>
 联系人：有生博大-咨询热线
 
 座机号：010-86393151
