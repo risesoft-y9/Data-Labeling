@@ -63,7 +63,9 @@ webapp -- 系统模块
 
 词库生成的结果以txt形式保存，每一行代表一个新的分词，词性为中文名词。
 
-词库中已包含多类主流分词词典：国家政治、地理信息、自然科学、应用科学、社会科学、经济金融、法律法规、农林牧渔、医学医药、体育文化等。
+词库中已包含多类主流分词词典：军事装备、经济金融、医疗医药（中医、西医）、农林渔畜、地理地质、基础科学、法律法规、工业工程（土木建筑、机械制造、信息工程、化学化工、电气电力、能源环境、交通运输）、政务公开等。
+
+<div><img src="https://vue.youshengyun.com/files/img/开源网站图片上传/专业领域词库分类.png"><div/>
 
 ## 后端技术选型
 
@@ -121,6 +123,29 @@ webapp -- 系统模块
 | 4      | 数据库  | 人大金仓、达梦、高斯等        |
 | 5      | 操作系统 | 统信、麒麟、中科方德等        |
 | 6      | 芯片   | ARM体系、MIPS体系、X86体系 |
+
+## 文档专区
+
+开发文档：https://docs.youshengyun.com/
+
+| 序号 | 名称                                                                                                               |
+|:---|------------------------------------------------------------------------------------------------------------------|
+| 1  | <a href="https://vue.youshengyun.com/files/内部Java开发规范手册.pdf" target="_blank">内部Java开发规范手册</a>                    |
+| 2  | <a href="https://vue.youshengyun.com/files/日志组件使用文档.pdf" target="_blank">日志组件使用文档</a>                            |
+| 3  | <a href="https://vue.youshengyun.com/files/文件组件使用文档.pdf" target="_blank">文件组件使用文档</a>                            |
+| 4  | <a href="https://vue.youshengyun.com/files/代码生成器使用文档.pdf" target="_blank">代码生成器使用文档</a>                          |
+| 5  | <a href="https://vue.youshengyun.com/files/配置文件说明文档.pdf" target="_blank">配置文件说明文档</a>                            |
+| 6  | <a href="https://vue.youshengyun.com/files/常用工具类使用示例文档.pdf" target="_blank">常用工具类使用示例文档</a>                      |
+| 7  | <a href="https://vue.youshengyun.com/files/有生博大Vue开发手册v1.0.pdf" target="_blank">前端开发手册</a>                       |
+| 8  | <a href="https://vue.youshengyun.com/files/开发规范.pdf" target="_blank">前端开发规范</a>                                  |
+| 9  | <a href="https://vue.youshengyun.com/files/代码格式化.pdf" target="_blank">前端代码格式化</a>                                |
+| 10 | <a href="https://vue.youshengyun.com/files/系统组件.pdf" target="_blank">前端系统组件</a>                                  |
+| 11 | <a href="https://vue.youshengyun.com/files/通用方法.pdf" target="_blank">前端通用方法</a>                                  |
+| 12 | <a href="https://vue.youshengyun.com/files/国际化.pdf" target="_blank">前端国际化</a>                                    |
+| 13 | <a href="https://vue.youshengyun.com/files/Icon图标.pdf" target="_blank">前端Icon图标</a>                              |
+| 14 | <a href="https://vue.youshengyun.com/files/单点登录对接文档.pdf" target="_blank">单点登录对接文档</a>                            |
+| 15 | <a href="https://docs.youshengyun.com/" target="_blank">安装部署文档</a>                                               |
+| 16 | <a href="https://docs.youshengyun.com/" target="_blank">分词器操作手册</a>                                               |
 
 ## 数据标注截图
 
