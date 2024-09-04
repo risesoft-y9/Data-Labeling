@@ -27,6 +27,13 @@
                         >
                     </template>
                 </el-popover>
+                <el-button
+                    type="primary"
+                    plain
+                    @click="hideAnnotatedWords"
+                    :class="{ 'focus-button': hideButton, 'primary-button': !hideButton }"
+                    >隐藏标注词</el-button
+                >
             </div>
             <div>
                 【字体：<span @click="handlerClick('large')" :class="{ red: fontsize == 'large' }">大</span>
@@ -99,6 +106,7 @@
         id: string;
         showButton: boolean;
         IKButton: boolean;
+        hideButton: boolean;
     }
 
     interface oldKeywordType {
@@ -288,6 +296,10 @@
             if (showButton.value && oldVal.length) {
                 handlerShowResult(showButton.value);
             }
+            // 隐藏标注词
+            if (hideButton.value && oldVal.length) {
+                hideAnnotatedWords(hideButton.value);
+            }
         },
         {
             deep: true,
@@ -298,7 +310,8 @@
     let allTitleShowButton = ref<Array<showButtonType>>([]);
     let showButton = ref(false);
     let IKButton = ref(false);
-    // 显示标注结果,IK分词的逻辑处理
+    let hideButton = ref(false);
+    // 显示标注结果,IK分词，隐藏标注词的逻辑处理
     async function handlerAllShowButton(articleInfo) {
         let buttonList = y9_storage.getObjectItem('titleShowButton');
         if (buttonList && buttonList?.length) {
@@ -306,19 +319,33 @@
         }
         if (allTitleShowButton.value.length) {
             let matchList = await allTitleShowButton.value?.filter((item) => item.id == articleInfo.id);
+            // console.log(matchList, '00----');
             if (!matchList?.length) {
-                allTitleShowButton.value.push({ id: articleInfo.id, showButton: false, IKButton: false });
+                allTitleShowButton.value.push({
+                    id: articleInfo.id,
+                    showButton: false,
+                    IKButton: false,
+                    hideButton: false,
+                });
                 showButton.value = false;
                 IKButton.value = false;
+                hideButton.value = false;
             } else {
                 showButton.value = matchList[0].showButton;
                 IKButton.value = matchList[0].IKButton;
+                hideButton.value = matchList[0].hideButton;
             }
         } else {
-            allTitleShowButton.value.push({ id: articleInfo.id, showButton: false, IKButton: false });
+            allTitleShowButton.value.push({
+                id: articleInfo.id,
+                showButton: false,
+                IKButton: false,
+                hideButton: false,
+            });
         }
         // 模拟点击按钮
         handlerShowResult(showButton.value);
+        hideAnnotatedWords(hideButton.value);
     }
 
     // 新关键词的列表
@@ -404,6 +431,8 @@
                     if (item.IKButton) {
                         showButton.value = false;
                         item.showButton = false;
+                        hideButton.value = false;
+                        item.hideButton = false;
                     }
                 }
             });
@@ -473,6 +502,8 @@
                     if (showButton.value) {
                         item.IKButton = false;
                         IKButton.value = false;
+                        item.hideButton = false;
+                        hideButton.value = false;
                     }
                 }
             });
@@ -494,6 +525,41 @@
                 border-radius: 4px;
                 font-weight: 500;">${item}</b>`
                     );
+                }
+            });
+        }
+    }
+
+    // 隐藏标注词
+    async function hideAnnotatedWords(buttonStatus?) {
+        // 将标注词文字变成空白 但占据单元格
+        if (typeof buttonStatus !== 'boolean') {
+            await allTitleShowButton.value?.map((item) => {
+                if (item.id == props.contentInfo.id) {
+                    item.hideButton = !item.hideButton;
+                    hideButton.value = item.hideButton;
+                    if (hideButton.value) {
+                        item.IKButton = false;
+                        IKButton.value = false;
+                        item.showButton = false;
+                        showButton.value = false;
+                    }
+                }
+            });
+            // 存储数据
+            y9_storage.setObjectItem('titleShowButton', allTitleShowButton.value);
+        }
+
+        content.value = articleContent.value;
+
+        if (props.selectwordList.length && hideButton.value) {
+            // 隐藏标注词
+            let wordsList = sortArray($deeploneObject(props.selectwordList));
+            await wordsList?.map((item: any) => {
+                const reg = new RegExp(`${item}`, 'g');
+                if (content.value.includes(item)) {
+                    // 用白色背景代替空白效果
+                    content.value = content.value.replace(reg, `<b style="background: #fff;opacity: 0">${item}</b>`);
                 }
             });
         }
