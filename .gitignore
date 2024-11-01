@@ -1,0 +1,31 @@
+# Build and Release Folders
+target/
+
+# Eclipse
+.settings/
+*.classpath
+*.project
+*.factorypath
+
+# IntelliJ IDEA
+.idea
+*.iml
+
+# vscode
+.vscode
+
+# JRebel
+rebel.xml
+
+# macOS
+.DS_Store
+
+# svn
+.svn/
+
+# vue
+y9vue-tokenizer/
+node_modules/
+auto-imports.d.ts
+
+.flattened-pom.xml

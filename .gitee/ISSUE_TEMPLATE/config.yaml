@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+    - name: 数据标注文档
+      url: https://gitee.com/risesoft-y9/y9-label#%E6%96%87%E6%A1%A3%E4%B8%93%E5%8C%BA
+      about: 提供数据标注介绍、基本组件使用和常见问题解答
