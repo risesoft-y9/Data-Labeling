@@ -144,8 +144,8 @@ webapp -- 系统模块
 | 12 | <a href="https://vue.youshengyun.com/files/国际化.pdf" target="_blank">前端国际化</a>                                    |
 | 13 | <a href="https://vue.youshengyun.com/files/Icon图标.pdf" target="_blank">前端Icon图标</a>                              |
 | 14 | <a href="https://vue.youshengyun.com/files/单点登录对接文档.pdf" target="_blank">单点登录对接文档</a>                            |
-| 15 | <a href="https://docs.youshengyun.com/" target="_blank">安装部署文档</a>                                               |
-| 16 | <a href="https://docs.youshengyun.com/" target="_blank">分词器操作手册</a>                                               |
+| 15 | <a href="https://vue.youshengyun.com/files/分词器安装部署文档.pdf" target="_blank">安装部署文档</a>                                               |
+| 16 | <a href="https://vue.youshengyun.com/files/分词器操作手册.pdf" target="_blank">分词器操作手册</a>                                               |
 
 ## 数据标注截图
 
