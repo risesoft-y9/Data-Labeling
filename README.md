@@ -57,15 +57,19 @@ webapp -- 系统模块
 | 8      | 标注日志                |在单个文章中查看已经完成的标注操作日志。|
 
 
-## 词库内容
+## 数据资产
 
-本项目当前正在标注的文章为全国公开政务文章，截止日期为2024年8月1日，共计35742篇，平均每篇字数约为6000字。
+### 行业领域专有词汇
+<div><img src="https://vue.youshengyun.com/files/img/行业领域专有词汇.png"><div/>
 
-词库生成的结果以txt形式保存，每一行代表一个新的分词，词性为中文名词。
+### 政务公开文章词汇
+<div><img src="https://vue.youshengyun.com/files/img/政务公开文章词汇.png"><div/>
 
-词库中已包含多类主流分词词典：军事装备、经济金融、医疗医药（中医、西医）、农林渔畜、地理地质、基础科学、法律法规、工业工程（土木建筑、机械制造、信息工程、化学化工、电气电力、能源环境、交通运输）、政务公开等。
+### 司法案件观点条例
+<div><img src="https://vue.youshengyun.com/files/img/司法案件观点条例.png"><div/>
 
-<div><img src="https://vue.youshengyun.com/files/img/开源网站图片上传/专业领域词库分类.png"><div/>
+### 数据库分类题目库
+<div><img src="https://vue.youshengyun.com/files/img/数据库分类题目库.png"><div/>
 
 ## 后端技术选型
 
@@ -173,6 +177,16 @@ webapp -- 系统模块
 ### 统一标识代码注册管理中心
 
 官网：<a href="https://www.idcode.org.cn/" target="_blank">https://www.idcode.org.cn/</a>
+
+### 济南亚跃信息技术有限公司
+
+官网：<a href="https://www.yayueyun.com/yayueOwe"target="_blank">https://www.yayueyun.com/yayueOwe/</a>
+
+### 北京京畿法律咨询有限公司
+
+联系人：邱先生
+
+邮箱：bjbj7@qq.com
 
 >
 数字底座已经全面接入统一标识码（MA码），具体使用说明请查看：<a href="https://gitee.com/risesoft-y9/y9-core/tree/main/y9-digitalbase-idcode" target="_blank">https://gitee.com/risesoft-y9/y9-core/tree/main/y9-digitalbase-idcode</a>
