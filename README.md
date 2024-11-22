@@ -60,16 +60,16 @@ webapp -- 系统模块
 ## 数据资产
 
 ### 行业领域专有词汇
-<div><img src="https://vue.youshengyun.com/files/img/行业领域专有词汇.png"><div/>
+<div><img src="https://vue.youshengyun.com/files/行业领域专有词汇.png"><div/>
 
 ### 政务公开文章词汇
-<div><img src="https://vue.youshengyun.com/files/img/政务公开文章词汇.png"><div/>
+<div><img src="https://vue.youshengyun.com/files/政务公开文章词汇.png"><div/>
 
 ### 司法案件观点条例
-<div><img src="https://vue.youshengyun.com/files/img/司法案件观点条例.png"><div/>
+<div><img src="https://vue.youshengyun.com/files/司法案件观点条例.png"><div/>
 
 ### 数据库分类题目库
-<div><img src="https://vue.youshengyun.com/files/img/数据库分类题目库.png"><div/>
+<div><img src="https://vue.youshengyun.com/files/数据库分类题目库.png"><div/>
 
 ## 后端技术选型
 
