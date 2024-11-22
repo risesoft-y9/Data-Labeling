@@ -178,6 +178,15 @@ webapp -- 系统模块
 
 官网：<a href="https://www.idcode.org.cn/" target="_blank">https://www.idcode.org.cn/</a>
 
+
+>
+数字底座已经全面接入统一标识码（MA码），具体使用说明请查看：<a href="https://gitee.com/risesoft-y9/y9-core/tree/main/y9-digitalbase-idcode" target="_blank">https://gitee.com/risesoft-y9/y9-core/tree/main/y9-digitalbase-idcode</a>
+>
+
+### 中国城市发展研究会
+
+官网：<a href="https://www.china-cfh.com/" target="_blank">https://www.china-cfh.com/</a>
+
 ### 济南亚跃信息技术有限公司
 
 官网：<a href="https://www.yayueyun.com/yayueOwe"target="_blank">https://www.yayueyun.com/yayueOwe/</a>
@@ -187,14 +196,6 @@ webapp -- 系统模块
 联系人：邱先生
 
 邮箱：bjbj7@qq.com
-
->
-数字底座已经全面接入统一标识码（MA码），具体使用说明请查看：<a href="https://gitee.com/risesoft-y9/y9-core/tree/main/y9-digitalbase-idcode" target="_blank">https://gitee.com/risesoft-y9/y9-core/tree/main/y9-digitalbase-idcode</a>
->
-
-### 中国城市发展研究会
-
-官网：<a href="https://www.china-cfh.com/" target="_blank">https://www.china-cfh.com/</a>
 
 ## 咨询与合作
 
