@@ -189,7 +189,7 @@ webapp -- 系统模块
 
 ### 济南亚跃信息技术有限公司
 
-官网：<a href="https://www.yayueyun.com/yayueOwe"target="_blank">https://www.yayueyun.com/yayueOwe/</a>
+官网：<a href="https://www.yayueyun.com/yayueOwe"target="_blank">https://www.yayueyun.com/yayueOwe</a>
 
 ### 北京京畿法律咨询有限公司
 
