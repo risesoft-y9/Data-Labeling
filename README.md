@@ -71,6 +71,9 @@ webapp -- 系统模块
 ### 4. 数据库分类题目库
 <div><img src="https://vue.youshengyun.com/files/数据库分类题目库.png"><div/>
 
+### 5. 算法库（来自“山东国家应用数学中心”）
+<div><img src="https://vue.youshengyun.com/files/算法库.jpg"><div/>
+
 ## 后端技术选型
 
 | 序号 | 依赖              | 版本      | 官网                                                                                                                 |
@@ -194,6 +197,10 @@ webapp -- 系统模块
 联系人：邱先生
 
 邮箱：bjbj7@qq.com
+
+### 山东国家应用数学中心
+
+官网：<a href="http://www.sdam.sdu.edu.cn/" target="_blank">http://www.sdam.sdu.edu.cn/</a>
 
 ## 咨询与合作
 
