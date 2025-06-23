@@ -6,6 +6,7 @@
   "main": "/electron/main.js",
   "scripts": {
     "serve": "vite  --mode development",
+    "dev": "vite  --mode dev",
     "build": "vite build",
     "preview": "vite preview",
     "svgo": "svgo -f src/assets/iconsvg --config=src/assets/iconsvg/svgo.yml"
